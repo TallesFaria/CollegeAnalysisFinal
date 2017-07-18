@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="col-xs-12">
+		<div class="jumbotron">
+			{{app}}
+			<input class="form-control" type="text" ng-model="searchStudentBy" placeholder="Grab some student! =D"/>
+			<table class="table" class="selected">
+				<tr>
+					<td></td>
+					<td><a href="" ng-click="sortStudentsBy('name')">Name</a></td>
+					<td><a href="" ng-click="sortStudentsBy('mean')">Mean</a></td>
+					<td><a href="" ng-click="sortStudentsBy('rank')">Rank</a></td>
+				</tr>
+				<tr ng-class="{selected: student.selected}" ng-repeat="student in studentsList | filter:searchStudentBy | orderBy:sortStudentsCriteria:sortDirection">
+					<td>
+						<button type="button" ng-model="student.selected" class="btn btn-sm btn-success pull-left">
+							<span class="glyphicon glyphicon-unchecked"></span>
+						</button>
+					</td>
+					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold">{{student.name}}</span></a></td>
+					<td><span style="font-weight:bold">{{student.mean | currency: "": "2"}}</span></td>
+					<td><span style="font-weight:bold">{{student.rank}}</span></td>
+					<td>
+						<button type="button" class="btn btn-sm btn-default pull-right">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+					</td>
+				</tr>
+			</table>
+			<a href="#/addNewStudent" style="margin-bottom: 10px;" class="btn btn-primary btn-lg btn-block">
+				<span class="glyphicon glyphicon-plus"></span>
+				Add New Student
+			</a>
+		</div>
+	</div>    
+</div>
+
+<div ng-include="'view/footer.html'"></div>
