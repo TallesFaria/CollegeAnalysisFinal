@@ -1,16 +1,77 @@
-.jumbotron {
-	width: 400px;
-	text-align: center;
-	margin-top: 20px;
-	margin-left: auto;
-	margin-right: auto;
+body {
+    background-color: #34495e;
 }
+
+.container-fluid {
+    background-color: #f9eaf9;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-inverse {
+    background-color: #f9eaf9;
+    border-color: #f9eaf9;
+}
+
+.primary:focus {
+    background-color: #337ab7;
+}
+
+.btn-primary {
+    background-color: #34495e;
+}
+
+.btn-success:focus {
+    background-color: #337ab7;
+}
+
+.btn-success:hover {
+    background-color: #337ab7;
+}
+
+.btn-success {
+    background-color: #34495e;
+}
+
+.jumbotron {
+    width: 900px;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-right: auto;
+    background-color: #f9eaf9;
+}
+
 .table {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 .form-control {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
-.selected {
-	background-color: #337ab7;
+.selecionado {
+    background-color: yellow;
+}   
+.negrito {
+	font-weight: bold;
+}
+hr {
+	border-color: #999;
+}
+
+.ribbon {
+	position: absolute;
+	top: 0px;
+	right: 30px;
+	width: 20px;
+	height: 40px;
+	border-style: solid;
+	border-width: 0 10px 10px 10px;
+	border-color: transparent transparent #EEE transparent;
+	cursor: pointer;
+	background-color: #EE0000;
+}
+.ribbon:hover {
+	height: 41px;
 }
