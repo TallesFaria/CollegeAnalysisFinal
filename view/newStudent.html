@@ -1,25 +1,23 @@
 <div class="container">
     <div class="col-xs-12">
         <div class="jumbotron text-center">
-            <h1>Add New Student</h1>
+            <h1><span class="glyphicon glyphicon-plus"></span> New Student</h1>
             <form name="studentForm" >
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name" ng-model="student.name" name="name" ng-required="true" ng-minlength="5"/>
-                    <select class="form-control" ng-model="student.semester" ng-options="subject.acronym for subject in subjectsList">
-                        <option value="">Select a subject</option>
-                    </select>
+                    <input type="text" class="form-control input-home" placeholder="Name" ng-model="student.name" name="name" ng-required="true" ng-minlength="5"/>
+                    <input type="text" class="form-control input-home" placeholder="Image Url" ng-model="student.src" name="url"/>
                     <br>
-                    <h2>Grades</h2>
+                    <h2><span class="glyphicon glyphicon-sort-by-attributes"></span>Grades</h2>
                     <br>
-                    <input type="text" class="form-control" placeholder="EEA-21" ng-model="student.grades[0]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
-                    <input type="text" class="form-control" placeholder="CES-22" ng-model="student.grades[1]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
-                    <input type="text" class="form-control" placeholder="CTC-20" ng-model="student.grades[2]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
-                    <input type="text" class="form-control" placeholder="EEA-45" ng-model="student.grades[3]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
-                    <input type="text" class="form-control" placeholder="EES-10" ng-model="student.grades[4]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
-                    <input type="text" class="form-control" placeholder="ELE-12" ng-model="student.grades[5]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
+                    <input type="text" class="form-control input-home" placeholder="EEA-21" ng-model="student.grades[0]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
+                    <input type="text" class="form-control input-home" placeholder="CES-22" ng-model="student.grades[1]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
+                    <input type="text" class="form-control input-home" placeholder="CTC-20" ng-model="student.grades[2]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
+                    <input type="text" class="form-control input-home" placeholder="EEA-45" ng-model="student.grades[3]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
+                    <input type="text" class="form-control input-home" placeholder="EES-10" ng-model="student.grades[4]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
+                    <input type="text" class="form-control input-home" placeholder="ELE-12" ng-model="student.grades[5]" name="grade" ng-pattern="/^\d{1,2}\.?\d{1,3}$/" ui-grade/>
                 </div>
                 <div ng-show="!studentForm.grade.$error.pattern">
-                    Grades must be a float number between 0 and 100.
+                    <em>Grades must be a float number between 0 and 100*</em> 
                 </div>
                 <br>
                 <div class="form-group">

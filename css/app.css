@@ -1,5 +1,5 @@
-a {
-    color: #553e77;
+a, h1, h2 {
+   color: #34495e;
 }
 
 body {
@@ -27,6 +27,10 @@ body {
 .navbar-inverse {
     background-color: #f9eaf9;
     border-color: #f9eaf9;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #34495e;
 }
 
 .primary:focus {
@@ -59,19 +63,30 @@ body {
 }
 
 .image {
-    background-repeat:no-repeat; 
-    background-size:18em 25em;
+    background-repeat:no-repeat;
+    width: 400px ;
+    background-size:100% 100%;
+    flex:3;
     background-position: right; 
-    height: 60%; 
+    height: 100%;
+    border: 2px solid #997484;
+    border-radius: 8px;
     width: 100%;
+}
+
+.upper-student-details {
+    position: left; 
+    width: 400px; 
+    flex:5;
 }
 
 .info-student {
     width: 800px;
+    height: 250px;
     text-align: left;
+    display: flex;
     margin-left: 0;
     margin-top: 30px;
-    margin-right: auto;
     background-color: #f9eaf9;
 }
 
