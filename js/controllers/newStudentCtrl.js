@@ -4,6 +4,7 @@ angular.module("collegeAnalysis").controller("newStudentCtrl", function ($scope,
     $scope.saveStudentInfo = function (student) {
         studentsAPI.saveStudentInfo(student).success(function (data) {
             delete $scope.student;
+            $scope.studentForm.$setPristine();
             $location.path("/students");
         })
     };

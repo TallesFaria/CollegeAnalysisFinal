@@ -170,8 +170,6 @@ rankSort = () => {
         student.rank = rank;
     })
 }
-rankSort();
-//console.log(students);
 
 rankBySubjectSort = (index) => {
     students.sort((a,b) => (a.grades[index].grade > b.grades[index].grade) ? -1 : ((b.grades[index].grade > a.grades[index].grade) ? 1 : 0)); 
@@ -186,7 +184,6 @@ rankBySubjectSort = (index) => {
 for(index = 0; index < students[0].grades.length; index++) {
     rankBySubjectSort(index);
 }
-    
 
 app.all('*', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -196,6 +193,7 @@ app.all('*', (req, res, next) => {
 });
 
 app.get('/students', (req, res) => {
+  rankSort();
   res.json(students);
 });
 
