@@ -1,23 +1,20 @@
 <div class="container">
 	<div class="col-xs-12">
 		<div class="jumbotron">
-			<h1>{{app}}</h1> 
+			<span style="color: #553e77"><h1>{{app}}</h1></span> 
 			<br>
-			<input class="form-control" type="text" ng-model="searchStudentBy" placeholder="Grab some student! =D"/>
+			<input class="form-control input-home"  type="text" ng-model="searchStudentBy" placeholder="Grab some student! =D"/>
 			<table class="table" class="selected">
 				<tr>
 					<td></td>
-					<td><span style="font-weight:bold"><a href="" ng-click="sortStudentsBy('name')">Name</a></span></td>
-					<td><span style="font-weight:bold"><a href="" ng-click="sortStudentsBy('mean')">Mean</a></span></td>
-					<td><span style="font-weight:bold"><a href="" ng-click="sortStudentsBy('rank')">Rank</a></span></td>
+					<td><span style="font-weight:bold; font-size: 1.5em"><a href="" ng-click="sortStudentsBy('name')">Name</a></span></td>
+					<td><span style="font-weight:bold; font-size: 1.5em" ><a href="" ng-click="sortStudentsBy('mean')">Mean</a></span></td>
+					<td><span style="font-weight:bold; font-size: 1.5em"><a href="" ng-click="sortStudentsBy('rank')">Rank</a></span></td>
 				</tr>
 				<tr ng-class="{selected: student.selected}" ng-repeat="student in studentsList | filter:searchStudentBy | orderBy:sortStudentsCriteria:sortDirection">
 					<td>
-						<button type="button" ng-model="student.selected" class="btn btn-sm btn-success pull-left">
-							<span class="glyphicon glyphicon-unchecked"></span>
-						</button>
 					</td>
-					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold">{{student.name | name | ellipsis:10}}</span></a></td>
+					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold; color: #34495e">{{student.name | name | ellipsis:10}}</span></a></td>
 					<td><span style="font-weight:bold">{{student.mean | currency: "": "2"}}</span></td>
 					<td><span style="font-weight:bold">{{student.rank}}</span></td>
 					<td>

@@ -4,14 +4,14 @@
             <form name="StudentForm" >
                 <div class="form-group">
                     <h1>Name: {{student.name}}</h1>
-                    <h2>Mean: {{student.mean | currency: "": "2"}}, Rank: {{student.rank}}</h2>
+                    <h2>Mean: <span style="font-weight:bold">{{student.mean | currency: "": "2"}}</span>, Rank: <span style="font-weight:bold">{{student.rank}}</span></h2>
                     <br/>
                     <table class="table">
                         <tr>
                             <td></td>
-                            <td><span style="font-weight:bold">Subject</span></td>
-                            <td><span style="font-weight:bold">Grade</span></td>
-                            <td><span style="font-weight:bold">Rank</span></td>
+                            <td><span style="font-weight:bold; font-size:2em">Subject</span></td>
+                            <td><span style="font-weight:bold; font-size:2em">Grade</span></td>
+                            <td><span style="font-weight:bold; font-size:2em">Rank</span></td>
                             <td></td>
                         </tr>
                         <tr ng-repeat="subject in student.grades">
