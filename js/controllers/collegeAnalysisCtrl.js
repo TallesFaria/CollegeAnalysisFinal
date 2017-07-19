@@ -4,7 +4,7 @@ angular.module("collegeAnalysis").controller("collegeAnalysisCtrl", function ($s
     $scope.subjectsList = subjectsList.data;
 
     $scope.sortStudentsBy = function (searchTerm) {
-		$scope.sortStudentsCriteria = searchTerm;
-		$scope.sortDirection = !$scope.sortDirection;
-	};
+      $scope.sortStudentsCriteria = searchTerm;
+      $scope.sortDirection = !$scope.sortDirection;
+    };
 });

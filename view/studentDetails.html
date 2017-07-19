@@ -4,7 +4,7 @@
             <form name="StudentForm" >
                 <div class="form-group">
                     <h1>Name: {{student.name}}</h1>
-                    <h2>Mean: {{student.mean}}, Rank: {{student.rank}}</h2>
+                    <h2>Mean: {{student.mean | currency: "": "2"}}, Rank: {{student.rank}}</h2>
                     <br/>
                     <table class="table">
                         <tr>
@@ -22,7 +22,7 @@
                             </td>
                             <td><span style="font-weight:bold">{{subject.acronym}}</span></td>
                             <td><span style="font-weight:bold">{{subject.grade | currency: "": "2"}}</span></td>
-                            <td><span style="font-weight:bold">Rank</span></td>
+                            <td><span style="font-weight:bold">{{subject.rank}}</span></td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-default pull-right">
                                     <span class="glyphicon glyphicon-pencil"></span>
