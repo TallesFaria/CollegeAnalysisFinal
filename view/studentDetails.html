@@ -9,9 +9,9 @@
                     <table class="table">
                         <tr>
                             <td></td>
-                            <td><span style="font-weight:bold"><a href="">Subject</a></span></td>
-                            <td><span style="font-weight:bold"><a href="">Grade</a></span></td>
-                            <td><span style="font-weight:bold"><a href="">Rank</a></span></td>
+                            <td><span style="font-weight:bold">Subject</span></td>
+                            <td><span style="font-weight:bold">Grade</span></td>
+                            <td><span style="font-weight:bold">Rank</span></td>
                             <td></td>
                         </tr>
                         <tr ng-repeat="subject in student.grades">
@@ -23,11 +23,6 @@
                             <td><span style="font-weight:bold">{{subject.acronym}}</span></td>
                             <td><span style="font-weight:bold">{{subject.grade | currency: "": "2"}}</span></td>
                             <td><span style="font-weight:bold">{{subject.rank}}</span></td>
-                            <td>
-                                <button type="button" class="btn btn-sm btn-default pull-right">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </button>
-                            </td>
                         </tr>
                     </table>
                 </div>

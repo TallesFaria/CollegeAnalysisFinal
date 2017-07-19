@@ -21,12 +21,12 @@ const students = [
     {
         name: 'Arthur',
         id: uniqid(),        grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
@@ -35,90 +35,96 @@ const students = [
         name: 'Liam',
         id: uniqid(),
         grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
     },
     {
         name: 'Janete', 
-        id: uniqid(),        grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+        id: uniqid(),        
+        grades: [
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
     },
     {
         name: 'Elisa', 
-        id: uniqid(),        grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+        id: uniqid(),        
+        grades: [
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
     },
     {
         name: 'Jack Meyers', 
-        id: uniqid(),        grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100 },
-            { acronym: 'CES-22', grade: Math.random() * 100 },
-            { acronym: 'CTC-20', grade: Math.random() * 100 },
-            { acronym: 'EEA-45', grade: Math.random() * 100 },
-            { acronym: 'EES-10', grade: Math.random() * 100 },
-            { acronym: 'ELE-12', grade: Math.random() * 100 },
+        id: uniqid(),        
+        grades: [
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
     },
     {
         name: 'Barbara', 
-        id: uniqid(),        grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+        id: uniqid(),        
+        grades: [
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
     },
     {
         name: 'Kelly', 
-        id: uniqid(),        grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+        id: uniqid(),        
+        grades: [
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
     },
     {
         name: 'Mattheus', 
-        id: uniqid(),        grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+        id: uniqid(),        
+        grades: [
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
@@ -127,12 +133,12 @@ const students = [
         name: 'George', 
         id: uniqid(),
         grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
@@ -141,12 +147,12 @@ const students = [
         name: 'Bryan', 
         id: uniqid(),
         grades: [
-            { acronym: 'EEA-21', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CES-22', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'CTC-20', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EEA-45', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'EES-10', grade: Math.random() * 100, rank: 0 },
-            { acronym: 'ELE-12', grade: Math.random() * 100, rank: 0 },
+            { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EEA-45', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'EES-10', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
+            { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
         rank: 0
@@ -167,7 +173,7 @@ rankBySubjectSort = (index) => {
     var rank = 0;
     students.forEach((student) => {
         rank++;
-        student.grades[index].rank = rank;
+        student.grades[index].rank = rank + 'º';
     })
 }
 
@@ -181,7 +187,7 @@ rankSort = () => {
     var rank = 0;
     students.forEach((student) => {
         rank++;
-        student.rank = rank;
+        student.rank = rank + 'º';
     })
 }
 

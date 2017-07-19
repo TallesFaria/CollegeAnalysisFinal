@@ -19,6 +19,7 @@ angular.module("collegeAnalysis").factory("studentsAPI", function ($http, config
 	return {
 		getStudents: _getStudents,
 		getStudent: _getStudent,
+		saveStudentInfo: _saveStudentInfo,
 		saveStudentEdit: _saveStudentEdit
 	};
 });
