@@ -29,7 +29,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image0.jpg"
     },
     {
         name: 'Liam',
@@ -43,7 +44,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image1.jpg"
     },
     {
         name: 'Janete', 
@@ -57,7 +59,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image2.jpg"
     },
     {
         name: 'Elisa', 
@@ -71,7 +74,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image3.jpg"
     },
     {
         name: 'Jack Meyers', 
@@ -85,7 +89,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image4.jpg"
     },
     {
         name: 'Barbara', 
@@ -99,7 +104,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image5.jpg"
     },
     {
         name: 'Kelly', 
@@ -113,7 +119,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image6.jpg"
     },
     {
         name: 'Mattheus', 
@@ -127,7 +134,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image7.jpg"
     },
     {
         name: 'George', 
@@ -141,7 +149,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image8.jpg"
     },
     {
         name: 'Bryan', 
@@ -155,7 +164,8 @@ const students = [
             { acronym: 'ELE-12', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
         ],
         mean: 0,
-        rank: 0
+        rank: 0, 
+        src: "images/image9.jpg"
     }
 ];
 

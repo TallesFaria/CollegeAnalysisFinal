@@ -58,6 +58,23 @@ body {
     background-color: #f9eaf9;
 }
 
+.image {
+    background-repeat:no-repeat; 
+    background-size:18em 25em;
+    background-position: right; 
+    height: 60%; 
+    width: 100%;
+}
+
+.info-student {
+    width: 800px;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 30px;
+    margin-right: auto;
+    background-color: #f9eaf9;
+}
+
 .table {
     margin-top: 20px;
 }

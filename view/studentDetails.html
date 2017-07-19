@@ -1,11 +1,19 @@
 <div class="container">
     <div class="col-xs-12">
         <div class="jumbotron text-center">
-            {{student}}
+            <div>
+                <div class="info-student" style="position: left">
+                    <div class="image" class="img-thumbnail" style="background-image:url({{student.src}});">
+                        <h1>Name: {{student.name}}</h1>
+                        <h2>Mean: <span style="font-weight:bold">{{student.mean | currency: "": "2"}}</span>, Rank: <span style="font-weight:bold">{{student.rank}}</span></h2>
+                    </div>
+                </div>
+                <div class="info-student" >
+                    <!-- <img ng-src="{{student.src}}" alt="student's photo"> -->
+                </div>
+            </div>
             <form name="StudentForm" >
                 <div class="form-group">
-                    <h1>Name: {{student.name}}</h1>
-                    <h2>Mean: <span style="font-weight:bold">{{student.mean | currency: "": "2"}}</span>, Rank: <span style="font-weight:bold">{{student.rank}}</span></h2>
                     <br/>
                     <table class="table">
                         <tr>
