@@ -21,9 +21,9 @@
 					<td><span style="font-weight:bold">{{student.mean | currency: "": "2"}}</span></td>
 					<td><span style="font-weight:bold">{{student.rank}}</span></td>
 					<td>
-						<button type="button" class="btn btn-sm btn-default pull-right">
+						<a href="#/editStudentDetails/{{student.id}}/edit"><button type="button" class="btn btn-sm btn-default pull-right">
 							<span class="glyphicon glyphicon-pencil"></span>
-						</button>
+						</button></a>
 					</td>
 				</tr>
 			</table>

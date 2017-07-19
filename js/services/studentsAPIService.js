@@ -12,9 +12,13 @@ angular.module("collegeAnalysis").factory("studentsAPI", function ($http, config
 		return $http.post(config.baseUrl + "/students", student);
 	};
 
+	var _saveStudentEdit = function (student) {
+		return $http.post(config.baseUrl + "/students/edit", student);
+	};
+
 	return {
 		getStudents: _getStudents,
 		getStudent: _getStudent,
-		saveStudentInfo: _saveStudentInfo
+		saveStudentEdit: _saveStudentEdit
 	};
 });

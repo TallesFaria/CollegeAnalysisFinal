@@ -32,6 +32,15 @@ angular.module("collegeAnalysis").config(function ($routeProvider) {
 			}
 		}
 	});
+	$routeProvider.when("/editStudentDetails/:id/edit", {
+		templateUrl: "view/editStudentDetails.html",
+		controller: "editStudentDetailsCtrl",
+		resolve: {
+			student: function (studentsAPI, $route) {
+				return studentsAPI.getStudent($route.current.params.id);
+            }
+		}
+	});
 	$routeProvider.when("/error", {
 		templateUrl: "view/error.html"
 	});

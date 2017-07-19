@@ -161,16 +161,6 @@ students.forEach((student) => {
     student.mean = mean / student.grades.length;
 })
 
-rankSort = () => {
-    students.sort((a,b) => (a.mean > b.mean) ? -1 : ((b.mean > a.mean) ? 1 : 0)); 
-
-    var rank = 0;
-    students.forEach((student) => {
-        rank++;
-        student.rank = rank;
-    })
-}
-
 rankBySubjectSort = (index) => {
     students.sort((a,b) => (a.grades[index].grade > b.grades[index].grade) ? -1 : ((b.grades[index].grade > a.grades[index].grade) ? 1 : 0)); 
 
@@ -181,8 +171,18 @@ rankBySubjectSort = (index) => {
     })
 }
 
-for(index = 0; index < students[0].grades.length; index++) {
-    rankBySubjectSort(index);
+rankSort = () => {
+    for(index = 0; index < students[0].grades.length; index++) {
+        rankBySubjectSort(index);
+    }
+    
+    students.sort((a,b) => (a.mean > b.mean) ? -1 : ((b.mean > a.mean) ? 1 : 0)); 
+
+    var rank = 0;
+    students.forEach((student) => {
+        rank++;
+        student.rank = rank;
+    })
 }
 
 app.all('*', (req, res, next) => {
@@ -208,8 +208,7 @@ app.get('/students/:id', (req, res) => {
 });
 
 app.post('/students', (req, res) => {
-    var studentAux = req.body;
-    console.log(studentAux);
+    console.log(req.body);
     var student = 
     {
         name: req.body.name, 
@@ -230,10 +229,32 @@ app.post('/students', (req, res) => {
             mean += subject.grade;
             numberOfSubjects++;
         }
-            
     });
     student.mean = mean / numberOfSubjects;
     students.push(student);
+    rankSort();
+    res.json(true);
+});
+
+app.post('/students/edit', (req, res) => {
+    console.log(req.body);
+    student =  req.body;
+    var mean = 0;
+    var numberOfSubjects = 0;
+    student.grades.forEach((subject) => {
+        if(typeof subject.grade !== 'number')
+            subject.grade = parseInt(subject.grade)
+        if(!isNaN(subject.grade)){
+            mean += subject.grade;
+            numberOfSubjects++;
+        }
+    });
+    student.mean = mean / numberOfSubjects;
+    console.log(student)
+    for(index = 0; index < students.length; index++) {
+        if(students[index].id === student.id) 
+            students[index] = student;
+    }
     rankSort();
     res.json(true);
 });
