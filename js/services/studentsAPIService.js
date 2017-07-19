@@ -16,10 +16,16 @@ angular.module("collegeAnalysis").factory("studentsAPI", function ($http, config
 		return $http.post(config.baseUrl + "/students/edit", student);
 	};
 
+	var _deleteStudentInfo = function (student) {
+		console.log('Deleting:' + student)
+		return $http.post(config.baseUrl + "/students/delete", student);
+	};
+
 	return {
 		getStudents: _getStudents,
 		getStudent: _getStudent,
 		saveStudentInfo: _saveStudentInfo,
-		saveStudentEdit: _saveStudentEdit
+		saveStudentEdit: _saveStudentEdit,
+		deleteStudentInfo: _deleteStudentInfo
 	};
 });

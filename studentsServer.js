@@ -203,6 +203,17 @@ app.get('/students', (req, res) => {
   res.json(students);
 });
 
+app.post('/students/delete', (req, res) => {
+	console.log(req.body);
+	var indexDelete = 0;
+	for(index = 0; index < students.length; index++)
+		if(students[index].id === req.body.id) 
+			indexDelete = index;
+
+	students.splice(indexDelete, 1);
+	res.json(students);
+});
+
 app.get('/students/:id', (req, res) => {
   students.forEach((student) => {
     if (student.id == req.params.id) {
