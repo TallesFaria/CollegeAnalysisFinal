@@ -17,7 +17,7 @@
 							<span class="glyphicon glyphicon-unchecked"></span>
 						</button>
 					</td>
-					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold">{{student.name}}</span></a></td>
+					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold">{{student.name | name | ellipsis:10}}</span></a></td>
 					<td><span style="font-weight:bold">{{student.mean | currency: "": "2"}}</span></td>
 					<td><span style="font-weight:bold">{{student.rank}}</span></td>
 					<td>
