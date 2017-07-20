@@ -1,5 +1,5 @@
 {
-  "name": "College Analysis",
+  "name": "redux-simple-starter",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
+    "eslint-config-rallycoding": "^3.2.0",
     "express": "^4.15.3",
     "uniqid": "^4.1.1"
   }

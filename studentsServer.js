@@ -150,7 +150,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image8.jpg"
+        src: "images/image8.png"
     },
     {
         name: 'Bryan', 
