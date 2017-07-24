@@ -231,12 +231,31 @@ const calcMean = (student) => {
     return mean / numberOfSubjects;
 };
 
+const nameFilter = (name) => {
+    var namesList = name.split(' ');
+    var namesListFormatted = namesList.map(function (name) {
+        if (name.length <= 3) {
+            if (/(da|de|do|das|dos)/.test(name)) return name;
+        }
+        return name.charAt(0).toUpperCase() + name.substring(1).toLowerCase();
+    });
+    return namesListFormatted.join(' ');
+};
+
+const ellipsisFilter = (name, size) => {
+		if (name.length <= size) return name;
+		return `${name.substring(0, (size || 2))}...`;
+	};
+
 students.forEach((student) => {
     var mean = 0;
     student.grades.forEach((subject) => {
         mean += subject.grade;
     });
     student.mean = mean / student.grades.length;
+    student.nameExtendedVersion = student.name;
+    student.name = nameFilter(student.name);
+    student.nameEllipsis = ellipsisFilter(student.name, 10);
 });
 
 app.all('*', (req, res, next) => {
@@ -293,6 +312,8 @@ app.post('/students', (req, res) => {
         ];
         student.mean = 0;
     }
+    student.name = nameFilter(student.name);
+    student.nameEllipsis = ellipsisFilter(student.name, 10);
     students.push(student);
     rankSort();
     res.json(student.id);
@@ -318,6 +339,9 @@ app.post('/students/edit', (req, res) => {
             students[index] = student;
         }
     }
+    student.nameExtendedVersion = student.name;
+    student.name = nameFilter(student.name);
+    student.name = ellipsisFilter(student.name, 10);
     rankSort();
     res.json(true);
 });
