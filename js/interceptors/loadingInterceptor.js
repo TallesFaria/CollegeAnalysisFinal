@@ -1,4 +1,4 @@
-angular.module("collegeAnalysis").factory("loadingInterceptor", function ($q, $rootScope, $timeout) {
+angular.module('collegeAnalysis').factory('loadingInterceptor', function ($q, $rootScope, $timeout) {
 	return {
 		request: function (config) {
 			$rootScope.loading = true;

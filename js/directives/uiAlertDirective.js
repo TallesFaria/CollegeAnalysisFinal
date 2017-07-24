@@ -1,10 +1,10 @@
-angular.module("collegeAnalysis").directive("uiAlert", function () {
+angular.module('collegeAnalysis').directive('uiAlert', function () {
 	return {
-		templateUrl: "view/alert.html",
+		templateUrl: 'view/alert.html',
 		replace: true,
-		restrict: "AE",
+		restrict: 'AE',
 		scope: {
-			title: "@"
+			title: '@'
 		},
 		transclude: true
 	};

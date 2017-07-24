@@ -1,11 +1,10 @@
-angular.module("collegeAnalysis").controller("newStudentCtrl", function ($scope, studentsAPI, $location, subjectsList) {
+angular.module('collegeAnalysis').controller('newStudentCtrl', function ($scope, studentsAPI, $location, subjectsList) {
 	$scope.subjectsList = subjectsList.data;
 
-    $scope.saveStudentInfo = function (student) {
-        studentsAPI.saveStudentInfo(student).success(function (data) {
-            delete $scope.student;
-            $scope.studentForm.$setPristine();
-            $location.path("/students");
-        })
+    $scope.saveStudentInfo = function (studentInfo) {
+        studentsAPI.saveStudentInfo(studentInfo).success(function (req) {
+            delete $scope.studentInfo;
+            $location.path(`/studentDetails/${req}`);
+        });
     };
 });

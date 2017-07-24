@@ -29,6 +29,13 @@ body {
     height: 50px;
 }
 
+.input-grades {
+    width: 30%;
+    text-align: center;
+    background-color: #ffffff;
+    color: #553e77;
+}
+
 .container-fluid {
     background-color: #f9eaf9;
 }
