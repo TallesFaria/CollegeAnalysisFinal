@@ -3,7 +3,7 @@
 		<div class="jumbotron">
 			<span style="color: #34495e"><h1>{{app}}<span class="glyphicon glyphicon-pencil"></span></h1></span> 
 			<br>
-			<input class="form-control input-home"  type="text" ng-model="searchStudentBy" placeholder="Search"/>
+			<input class="form-control input-home"  type="text" ng-model="searchStudentBy" ng-model-options="{updateOn: 'default blur', debounce: {default: 300, blur: 0}}" placeholder="Search"/>
 			<table class="table" class="selected">
 				<tr>
 					<td></td>
