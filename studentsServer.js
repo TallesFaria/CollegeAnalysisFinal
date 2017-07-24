@@ -294,6 +294,7 @@ app.post('/students', (req, res) => {
         student.mean = 0;
     }
     students.push(student);
+    rankSort();
     res.json(student.id);
 });
 
@@ -305,6 +306,7 @@ app.post('/students/delete', (req, res) => {
         }
     }
     students.splice(indexDelete, 1);
+    rankSort();
 	res.json(true);
 });
 

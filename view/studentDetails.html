@@ -29,9 +29,9 @@
                                     <span class="glyphicon glyphicon-unchecked"></span>
                                 </button>
                             </td>
-                            <td><span class="text">{{subject.acronym}}</span></td>
-                            <td><span class="text">{{subject.grade | currency: "": "2"}}</span></td>
-                            <td><span class="text" ng-show="student.rank">{{subject.rank}}º</span></td>
+                            <td><span class="text">{{::subject.acronym}}</span></td>
+                            <td><span class="text">{{::subject.grade | currency: "": "2"}}</span></td>
+                            <td><span class="text" ng-show="student.rank">{{::subject.rank}}º</span></td>
                         </tr>
                     </table>
                 </div>

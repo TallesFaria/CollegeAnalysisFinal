@@ -14,9 +14,9 @@
 				<tr ng-class="{selected: student.selected}" ng-repeat="student in studentsList | filter:searchStudentBy | orderBy:sortStudentsCriteria:sortDirection">
 					<td>
 					</td>
-					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold; color: #34495e">{{student.name | name | ellipsis:10}}</span></a></td>
-					<td><span class="text">{{student.mean | currency: "": "2"}}</span></td>
-					<td><span class="text" ng-show="student.rank">{{student.rank}}º</span></td>
+					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold; color: #34495e">{{::student.name | name | ellipsis:10}}</span></a></td>
+					<td><span class="text">{{::student.mean | currency: "": "2"}}</span></td>
+					<td><span class="text" ng-show="student.rank">{{::student.rank}}º</span></td>
 					<td>
 						<a href="#/editStudentDetails/{{student.id}}/edit"><button type="button" class="btn btn-sm btn-default pull-right">
 							<span class="glyphicon glyphicon-pencil"></span>
