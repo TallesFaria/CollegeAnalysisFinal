@@ -3,7 +3,7 @@
 		<div class="jumbotron">
 			<span style="color: #34495e"><h1>{{app}}<span class="glyphicon glyphicon-pencil"></span></h1></span> 
 			<br>
-			<input class="form-control input-home"  type="text" ng-model="searchStudentBy" placeholder="Search"/>
+			<input class="form-control input-home"  type="text" ng-model="searchStudentBy" ng-model-options="{updateOn: 'default blur', debounce: {default: 300, blur: 0}}" placeholder="Search"/>
 			<table class="table" class="selected">
 				<tr>
 					<td></td>
@@ -11,12 +11,12 @@
 					<td><span class="sub-header" ><a href="" ng-click="sortStudentsBy('mean')">Mean</a></span></td>
 					<td><span class="sub-header"><a href="" ng-click="sortStudentsBy('rank')">Rank</a></span></td>
 				</tr>
-				<tr ng-class="{selected: student.selected}" ng-repeat="student in studentsList | filter:searchStudentBy | orderBy:sortStudentsCriteria:sortDirection">
+				<tr ng-class="{selected: student.selected}" ng-repeat="student in studentsList | filter:searchStudentBy | orderBy:sortStudentsCriteria:sortDirection track by student.id">
 					<td>
 					</td>
-					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold; color: #34495e">{{student.name | name | ellipsis:10}}</span></a></td>
-					<td><span class="text">{{student.mean | currency: "": "2"}}</span></td>
-					<td><span class="text">{{student.rank}}</span></td>
+					<td><a href="#/studentDetails/{{student.id}}"><span style="font-weight:bold; color: #34495e">{{::student.nameEllipsis}}</span></a></td>
+					<td><span class="text">{{::student.mean | currency: "": "2"}}</span></td>
+					<td><span class="text" ng-show="student.rank">{{::student.rank}}º</span></td>
 					<td>
 						<a href="#/editStudentDetails/{{student.id}}/edit"><button type="button" class="btn btn-sm btn-default pull-right">
 							<span class="glyphicon glyphicon-pencil"></span>

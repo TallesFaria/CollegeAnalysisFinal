@@ -20,7 +20,8 @@ const subjects = [
 const students = [
     {
         name: 'Arthur',
-        id: uniqid(),        grades: [
+        id: uniqid(),        
+        grades: [
             { acronym: 'EEA-21', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
             { acronym: 'CES-22', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
             { acronym: 'CTC-20', grade: Math.round((Math.random() * 100) * 100) / 100, rank: 0 },
@@ -30,7 +31,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image0.jpg"
+        src: 'images/image0.jpg'
     },
     {
         name: 'Liam',
@@ -45,7 +46,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image1.jpg"
+        src: 'images/image1.jpg'
     },
     {
         name: 'Janete', 
@@ -60,7 +61,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image2.jpg"
+        src: 'images/image2.jpg'
     },
     {
         name: 'Elisa', 
@@ -75,7 +76,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image3.jpg"
+        src: 'images/image3.jpg'
     },
     {
         name: 'Jack Meyers', 
@@ -90,7 +91,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image4.jpg"
+        src: 'images/image4.jpg'
     },
     {
         name: 'Barbara', 
@@ -105,7 +106,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image5.jpg"
+        src: 'images/image5.jpg'
     },
     {
         name: 'Kelly', 
@@ -120,7 +121,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image6.jpg"
+        src: 'images/image6.jpg'
     },
     {
         name: 'Mattheus', 
@@ -135,7 +136,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image7.jpg"
+        src: 'images/image7.jpg'
     },
     {
         name: 'George', 
@@ -150,7 +151,7 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image8.png"
+        src: 'images/image8.png'
     },
     {
         name: 'Bryan', 
@@ -165,30 +166,44 @@ const students = [
         ],
         mean: 0,
         rank: 0, 
-        src: "images/image9.jpg"
+        src: 'images/image9.jpg'
     }
 ];
 
-students.forEach((student) => {
-    var mean = 0;
-    student.grades.forEach((subject) => {
-        mean += subject.grade;
-    });
-    student.mean = mean / student.grades.length;
-})
+const rankBySubjectSort = (index) => {
+    students.sort(function (studentA, studentB) {
+        if (isNaN(studentA.grades[index].grade) && isNaN(studentB.grades[index].grade)) {
+            return 0;
+        }
 
-rankBySubjectSort = (index) => {
-    students.sort((a,b) => (a.grades[index].grade > b.grades[index].grade) ? -1 : ((b.grades[index].grade > a.grades[index].grade) ? 1 : 0)); 
+        if (!isNaN(studentA.grades[index].grade) && isNaN(studentB.grades[index].grade)) {
+            return -1;
+        }
+
+        if (isNaN(studentA.grades[index].grade) && !isNaN(studentB.grades[index].grade)) {
+            return 1;
+        }
+
+        if (studentA.grades[index].grade > studentB.grades[index].grade) {
+            return -1;
+        }
+
+        if (studentB.grades[index].grade > studentA.grades[index].grade) {
+            return 1;
+        }
+
+        return 0;
+    });
 
     var rank = 0;
     students.forEach((student) => {
         rank++;
-        student.grades[index].rank = rank + 'º';
-    })
-}
+        student.grades[index].rank = rank;
+    });
+};
 
-rankSort = () => {
-    for(index = 0; index < students[0].grades.length; index++) {
+const rankSort = () => {
+    for (var index = 0; index < students[0].grades.length; index++) {
         rankBySubjectSort(index);
     }
     
@@ -197,9 +212,51 @@ rankSort = () => {
     var rank = 0;
     students.forEach((student) => {
         rank++;
-        student.rank = rank + 'º';
-    })
-}
+        student.rank = rank;
+    });
+};
+
+const calcMean = (student) => {
+    var mean = 0;
+    var numberOfSubjects = 0;
+    student.grades.forEach((subject) => {
+        if (typeof subject.grade !== 'number') {
+            subject.grade = parseInt(subject.grade);
+        }
+        if (!isNaN(subject.grade)) {
+            mean += subject.grade;
+            numberOfSubjects++;
+        }
+    });
+    return mean / numberOfSubjects;
+};
+
+const nameFilter = (input) => {
+    var namesList = input.split(' ');
+    var namesListFormatted = namesList.map((name) => {
+        if (name.length <= 3) {
+            if (/(da|de|do|das|dos)/.test(name)) return name;
+        }
+        return name.charAt(0).toUpperCase() + name.substring(1).toLowerCase();
+    });
+    return namesListFormatted.join(' ');
+};
+
+const ellipsisFilter = (name, size) => {
+		if (name.length <= size) return name;
+		return `${name.substring(0, (size || 2))}...`;
+	};
+
+students.forEach((student) => {
+    var mean = 0;
+    student.grades.forEach((subject) => {
+        mean += subject.grade;
+    });
+    student.mean = mean / student.grades.length;
+    student.nameExtendedVersion = student.name;
+    student.name = nameFilter(student.name);
+    student.nameEllipsis = ellipsisFilter(student.name, 10);
+});
 
 app.all('*', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -213,20 +270,9 @@ app.get('/students', (req, res) => {
   res.json(students);
 });
 
-app.post('/students/delete', (req, res) => {
-	console.log(req.body);
-	var indexDelete = 0;
-	for(index = 0; index < students.length; index++)
-		if(students[index].id === req.body.id) 
-			indexDelete = index;
-
-	students.splice(indexDelete, 1);
-	res.json(students);
-});
-
 app.get('/students/:id', (req, res) => {
   students.forEach((student) => {
-    if (student.id == req.params.id) {
+    if (student.id === req.params.id) {
         res.json(student);
         return;
     }
@@ -234,60 +280,70 @@ app.get('/students/:id', (req, res) => {
   res.status(404).end();
 });
 
+app.get('/subjects', (req, res) => {
+  res.json(subjects);
+});
+
 app.post('/students', (req, res) => {
-    console.log(req.body);
     var student = 
     {
         name: req.body.name, 
-        id: uniqid(),
-        grades: [
+        id: uniqid()
+    };
+    if (typeof req.body.grades !== 'undefined') {
+        student.grades = [
             { acronym: 'EEA-21', grade: parseInt(req.body.grades[0]) },
             { acronym: 'CES-22', grade: parseInt(req.body.grades[1]) },
             { acronym: 'CTC-20', grade: parseInt(req.body.grades[2]) },
             { acronym: 'EEA-45', grade: parseInt(req.body.grades[3]) },
             { acronym: 'EES-10', grade: parseInt(req.body.grades[4]) },
             { acronym: 'ELE-12', grade: parseInt(req.body.grades[5]) },
-        ]
+        ];
+        student.mean = calcMean(student);
     }
-    var mean = 0;
-    var numberOfSubjects = 0;
-    student.grades.forEach((subject) => {
-        if(typeof subject.grade === 'number' && !isNaN(subject.grade)){
-            mean += subject.grade;
-            numberOfSubjects++;
-        }
-    });
-    student.mean = mean / numberOfSubjects;
+    else {
+        student.grades = [
+            { acronym: 'EEA-21', grade: NaN },
+            { acronym: 'CES-22', grade: NaN },
+            { acronym: 'CTC-20', grade: NaN },
+            { acronym: 'EEA-45', grade: NaN },
+            { acronym: 'EES-10', grade: NaN },
+            { acronym: 'ELE-12', grade: NaN },
+        ];
+        student.mean = 0;
+    }
+    student.name = nameFilter(student.name);
+    student.nameEllipsis = ellipsisFilter(student.name, 10);
     students.push(student);
     rankSort();
-    res.json(true);
+    res.json(student.id);
+});
+
+app.post('/students/delete', (req, res) => {
+	var indexDelete = 0;
+	for (var index = 0; index < students.length; index++) {
+        if (students[index].id === req.body.id) {
+            indexDelete = index;
+        }
+    }
+    students.splice(indexDelete, 1);
+    rankSort();
+	res.json(true);
 });
 
 app.post('/students/edit', (req, res) => {
-    console.log(req.body);
-    student =  req.body;
-    var mean = 0;
-    var numberOfSubjects = 0;
-    student.grades.forEach((subject) => {
-        if(typeof subject.grade !== 'number')
-            subject.grade = parseInt(subject.grade)
-        if(!isNaN(subject.grade)){
-            mean += subject.grade;
-            numberOfSubjects++;
-        }
-    });
-    student.mean = mean / numberOfSubjects;
-    console.log(student)
-    for(index = 0; index < students.length; index++) {
-        if(students[index].id === student.id) 
+    var student = req.body;
+    student.mean = calcMean(student);
+    for (var index = 0; index < students.length; index++) {
+        if (students[index].id === student.id) {
             students[index] = student;
+        }
     }
+    student.nameExtendedVersion = student.name;
+    student.name = nameFilter(student.name);
+    student.name = ellipsisFilter(student.name, 10);
     rankSort();
     res.json(true);
-});
-
-app.get('/subjects', (req, res) => {
-  res.json(subjects);
 });
 
 app.listen(process.env.PORT || 3413);
