@@ -231,9 +231,9 @@ const calcMean = (student) => {
     return mean / numberOfSubjects;
 };
 
-const nameFilter = (name) => {
-    var namesList = name.split(' ');
-    var namesListFormatted = namesList.map(function (name) {
+const nameFilter = (input) => {
+    var namesList = input.split(' ');
+    var namesListFormatted = namesList.map((name) => {
         if (name.length <= 3) {
             if (/(da|de|do|das|dos)/.test(name)) return name;
         }

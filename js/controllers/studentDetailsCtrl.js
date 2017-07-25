@@ -1,9 +1,8 @@
-angular.module('collegeAnalysis').controller('studentDetailsCtrl', function ($scope, $routeParams, student, subjectsList, studentsAPI, $location) {
+angular.module('collegeAnalysis').controller('studentDetailsCtrl', function ($scope, $routeParams, student, studentsAPI, $location) {
 	$scope.student = student.data;
-	$scope.subjectsList = subjectsList.data;
 
 	$scope.deleteStudentInfo = function (studentInfo) {
-		studentsAPI.deleteStudentInfo(studentInfo).success(function (data) {
+		studentsAPI.deleteStudentInfo(studentInfo).success(function () {
 			delete $scope.student;
 			$location.path('/students');
 		});

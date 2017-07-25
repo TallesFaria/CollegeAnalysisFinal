@@ -14,12 +14,7 @@ angular.module('collegeAnalysis').config(function ($routeProvider) {
 		})
 		.when('/addNewStudent', {
 			templateUrl: 'view/newStudent.html',
-			controller: 'newStudentCtrl',
-			resolve: {
-				subjectsList: function (subjectsAPI) {
-					return subjectsAPI.getSubjects();
-				}
-			}
+			controller: 'newStudentCtrl'
 		})
 		.when('/studentDetails/:id', {
 			templateUrl: 'view/studentDetails.html',
@@ -27,9 +22,6 @@ angular.module('collegeAnalysis').config(function ($routeProvider) {
 			resolve: {
 				student: function (studentsAPI, $route) {
 					return studentsAPI.getStudent($route.current.params.id);
-				},
-				subjectsList: function (subjectsAPI) {
-					return subjectsAPI.getSubjects();
 				}
 			}
 		})
